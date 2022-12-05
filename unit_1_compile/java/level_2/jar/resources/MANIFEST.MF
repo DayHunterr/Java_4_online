@@ -1,0 +1,2 @@
+Main-Class: ua.com.alevel.Hello
+Class-Path: JColor-5.5.1.jar
