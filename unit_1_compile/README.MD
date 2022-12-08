@@ -50,3 +50,4 @@
 `$ jar cvfm build/jar/hello.jar resources/MANIFEST.MF -C build/classes .`
 ### Run jar ###
 `$ java -jar build/jar/hello.jar`
+
