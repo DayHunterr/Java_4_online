@@ -16,14 +16,14 @@
 `java -cp build/classes ua.com.alevel.Hello`
 ### go to /java/level_1/med_proj ###
 `javac -sourcepath ./src -d build/classes ./src/ua/com/alevel/Hello.java`\
-`jar cvfm build/jar/hello.jar resources/MANIFEST.MF -C build/classes .`\
+`jar cvfm build/jar/hello.jar resources/MANIFEST.MF -C build/classes .`\jar
 `java -jar build/jar/hello.jar`
 
 ## Level 2 (with libs) ##
 ## Compilation contains external libraries ##
 
 ### go to /java/level_2/include_libs ###
-`javac -sourcepath ./src -d build/classes/ -cp ./lib/JColor-5.5.1.jar src/ua/com/alevel/util/Message.java src/ua/com/alevel/Hello.java`\
+`javac -sourcepath ./src -d build/classes/ -cp ./lib/JColor-5.5.1.jar src/ua/com/alevel/util/Message.java src/ua/com/alevel/Hello.java`
 `java -cp build/classes/:./lib/JColor-5.5.1.jar ua.com.alevel.Hello`
 ### go to /java/level_2/jar ###
 ### 1 variant ###

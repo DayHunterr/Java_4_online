@@ -1,1 +1,7 @@
 Main-Class: ua.com.alevel.Hello
+Class-Path: commom-lang-3.12.0.jar
+
+
+
+
+
