@@ -1,5 +1,6 @@
 package ua.com.alevel;
 
+import org.apache.commons.lang3.ObjectUtils;
 import ua.com.alevel.db.DbStorage;
 import ua.com.alevel.entity.BaseEntity;
 import ua.com.alevel.entity.Course;
@@ -132,6 +133,8 @@ public class Main {
 //        DbStorage.addCourse(course);
 //        System.out.println("courses = " + DbStorage.findAllCourses());
 
-        new StudentInterface().start();
+//        new StudentInterface().start();
+
+        System.out.println(ObjectUtils.notEqual(1, 2));
     }
 }

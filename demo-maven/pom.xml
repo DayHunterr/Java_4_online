@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ua.com.alevel</groupId>
-    <artifactId>unit_5_summary_by_1_module</artifactId>
+    <groupId>ua.com.alevel.java4</groupId>
+    <artifactId>demo-maven</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -15,26 +15,8 @@
         <maven.shade.plugin.version>3.2.4</maven.shade.plugin.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>ua.com.alevel.java4</groupId>
-            <artifactId>demo-maven</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.9.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
-        </dependency>
-    </dependencies>
-
     <build>
-        <finalName>unit_5_summary_by_1_module</finalName>
+        <finalName>demo-maven</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -69,4 +51,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

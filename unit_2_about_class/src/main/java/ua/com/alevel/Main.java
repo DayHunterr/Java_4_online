@@ -12,7 +12,7 @@ public class Main {
         long l = (long) a;
         A aa = new A();
         B bb = new B();
-        C cc = new C();
+//        C cc = new C();
 
         aa = new A();
         aa = new B();
@@ -21,7 +21,13 @@ public class Main {
         bb = new B();
         bb = new C();
 
-        cc = new C();
+
+        Integer i = 10;
+//        i = "test";
+
+        var cc = new C();
+//        val cc = new C();
+        var aaa = new Ajkggsfdgasdcgfadgfasdfgasdgfasdgfasdfgasdfgsadfgasdfgasdafgdsafgdfgd();
 
 //        bb = aa;
     }
