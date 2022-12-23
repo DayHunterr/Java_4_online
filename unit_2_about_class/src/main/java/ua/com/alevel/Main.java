@@ -8,5 +8,6 @@ public class Main {
         human123.name = "Alex";
         human123.age = 20;
         System.out.println(human123.info());
+        System.out.println(d);
     }
 }

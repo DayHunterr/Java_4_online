@@ -2,6 +2,14 @@ package ua.com.alevel;
 
 public class Human {
 
+    int a = 10 ;
+    int b = 5;
+    int c = 4;
+
+    int d = a + b + c;
+
+    byte p = 1;
+
     String name;
     int age;
     long salary;
