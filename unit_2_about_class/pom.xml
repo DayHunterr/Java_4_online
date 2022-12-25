@@ -19,7 +19,7 @@
     </dependencies>
 
     <build>
-        <finalName>about_class_new</finalName>
+        <finalName>LevchenkoAPP_about_class</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
