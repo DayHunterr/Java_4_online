@@ -1,25 +1,48 @@
 package ua.com.alevel;
-
 public class Human {
 
-    String name;
-    int age;
-    long salary;
+    private String name;
+    private int age;
+    private String message;
+    private boolean isFool;
 
-    boolean isMan = true;
 
-//    Human()
-//    {
-//        name = "Ivan";
-//        age = 30;
-//    }
+    public Human(String name, int age,  String message, boolean isFool) {
 
-    void drink()
-    {
+        this.name = name;
+        this.age = age;
+        this.message = message;
+        this.isFool = isFool;
 
     }
 
-    String info() {
-        return "name = " + name + ", age = " + age + ", salary = " + salary + ", isMan = " + isMan;
+    public String getMessage() {
+        return message;
     }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public boolean isFool() {
+        return isFool;
+    }
+
+    public void setFool(boolean fool) {
+        isFool = fool;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", message='" + message + '\'' +
+                ", isFool=" + isFool +
+                '}';
+    }
+
 }
+
+
+

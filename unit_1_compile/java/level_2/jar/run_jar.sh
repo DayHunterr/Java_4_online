@@ -2,19 +2,19 @@
 
 echo 'variant 1'
 
-javac -sourcepath ./src -d build/classes/ -cp ./lib/JColor-5.5.1.jar src/ua/com/alevel/util/Message.java src/ua/com/alevel/Hello.java
-cd lib
-jar xf JColor-5.5.1.jar
+javac -sourcepath ./src -d build/classes/ -cp ./lib/commons-codec-1.15.jar src/ua/com/alevel/util/MessageTask.java src/ua/com/alevel/HelloTask.java
+cd ./lib
+jar xf commons-codec-1.15.jar
 cp -rf com ../build/classes
-cd ..
-jar cvfm build/jar/hello.jar resources/MANIFEST.MF -C build/classes .
-jar tf build/jar/hello.jar
-java -jar build/jar/hello.jar
+cd ../
+jar cvfm build/jar/hellotask.jar resources/TASKMANIFEST.MF -C build/classes .
+jar tf build/jar/hellotask.jar
+java -jar build/jar/hellotask.jar
 
 echo 'variant 2'
 rm -rf lib/com
 rm -rf lib/META-INF
-javac -sourcepath ./src -d build/classes/ -cp ./lib/JColor-5.5.1.jar src/ua/com/alevel/util/Message.java src/ua/com/alevel/Hello.java
+javac -sourcepath ./src -d build/classes/ -cp ./lib/commons-codec-1.15.jar src/ua/com/alevel/util/MessageTask.java src/ua/com/alevel/HelloTask.java
 cp -r lib/*.jar build/jar
-jar cvfm build/jar/hello.jar resources/MANIFEST.MF -C build/classes .
-java -jar build/jar/hello.jar
+jar cvfm build/jar/hellotask.jar resources/TASKMANIFEST.MF -C build/classes .
+java -jar build/jar/hellotask.jar
