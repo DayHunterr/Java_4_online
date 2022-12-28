@@ -16,7 +16,7 @@
     </properties>
 
     <build>
-        <finalName>unit_3_start_oop</finalName>
+        <finalName>Levchenko_unit_3_start_oop</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
