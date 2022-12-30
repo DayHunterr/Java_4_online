@@ -6,7 +6,7 @@ public class Client {
     private String phone;
     private String email;
     private Subscription sub;
-
+//G
 
     public void setName(String name) {
             this.name = name;

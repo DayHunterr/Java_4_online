@@ -123,7 +123,7 @@ public class GymInterface {
             }
         }
     }
-
+//G
     private void validateEmail(BufferedReader reader, Client client) throws IOException {
         String email;
         while (true) {

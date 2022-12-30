@@ -18,7 +18,7 @@ public class GymStorage {
 
     }
 
-
+//G
 
     public static Client findByEmail(String email) {
         return clients.
