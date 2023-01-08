@@ -17,7 +17,6 @@ public class GymInterface {
         }
     }
 
-
     private void menu() {
         System.out.println();
         System.out.println("If you want create user, please enter 1");
@@ -31,21 +30,35 @@ public class GymInterface {
 
     private void crud(BufferedReader reader, String select) throws IOException {
         switch (select) {
-            case "1" : create(reader); break;
-            case "2" :{
+            case "1":
+                create(reader);
+                break;
+            case "2": {
                 if (GymStorage.getClients().isEmpty())
                     System.out.println("System does not contain any clients");
-                else update(reader); break;
+                else update(reader);
+                break;
             }
-            case "3" : findByEmail(reader); break;
-            case "4" : deleteAllClientByEmail(reader); break;
-            case "5" : findAll(); break;
-            case "6" : stop();break;
-            default : System.out.println("Wrong input"); break;
+            case "3":
+                findByEmail(reader);
+                break;
+            case "4":
+                deleteAllClientByEmail(reader);
+                break;
+            case "5":
+                findAll();
+                break;
+            case "6":
+                stop();
+                break;
+            default:
+                System.out.println("Wrong input");
+                break;
         }
         menu();
     }
-    private void update(BufferedReader reader) throws IOException{
+
+    private void update(BufferedReader reader) throws IOException {
         System.out.println("Enter email of client which you want to update");
         String email = reader.readLine();
         Client client = GymStorage.findByEmail(email);
@@ -62,19 +75,23 @@ public class GymInterface {
             System.out.println("If you want to close menu enter 4");
             String update = reader.readLine();
             switch (update) {
-                case "1" : {
+                case "1": {
                     validateEmail(reader, client);
                     break;
                 }
-                case "2" : {
+                case "2": {
                     validatePhone(reader, client);
                     break;
                 }
-                case "3" : subscription(reader, client); break;
-                case "4" : {
+                case "3":
+                    subscription(reader, client);
+                    break;
+                case "4": {
                     return;
                 }
-                default : System.out.println("Wrong input"); break;
+                default:
+                    System.out.println("Wrong input");
+                    break;
             }
         }
     }
@@ -90,40 +107,42 @@ public class GymInterface {
 
         GymStorage.addClient(client);
     }
-    private void subscription(BufferedReader reader, Client client) throws IOException{
+
+    private void subscription(BufferedReader reader, Client client) throws IOException {
         System.out.println("What do you want?");
         System.out.println("If you want to buy subscription enter 1");
         System.out.println("If you want to delete subscription plan enter 2");
         String select = reader.readLine();
-        switch (select){
-            case "1" : {
+        switch (select) {
+            case "1": {
                 client.setSub(Subscription.SUBSCRIBER);
                 System.out.println("Your subscription has been updated!");
                 break;
             }
-            case "2" : {
+            case "2": {
                 client.setSub(Subscription.UNSUBSCRIBER);
                 System.out.println("Your subscription has been deleted!");
                 break;
             }
-            default : System.out.println("Wrong input"); break;
+            default:
+                System.out.println("Wrong input");
+                break;
         }
     }
 
-    private void validateName(BufferedReader reader, Client client) throws IOException{
-        while (true){
+    private void validateName(BufferedReader reader, Client client) throws IOException {
+        while (true) {
             System.out.println("Please enter name");
             String name = reader.readLine();
             if (!name.matches(".*\\d.*")) {
                 client.setName(name);
                 break;
-            }
-            else {
+            } else {
                 System.out.println("Invalid name");
             }
         }
     }
-//G
+
     private void validateEmail(BufferedReader reader, Client client) throws IOException {
         String email;
         while (true) {
@@ -133,8 +152,7 @@ public class GymInterface {
                 if (email.matches("^(.+)@(.+)$")) {
                     client.setEmail(email);
                     break;
-                }
-                else {
+                } else {
                     System.out.println("Invalid email");
                 }
             } else {
@@ -144,16 +162,15 @@ public class GymInterface {
 
     }
 
-    private void validatePhone(BufferedReader reader, Client client) throws IOException{
+    private void validatePhone(BufferedReader reader, Client client) throws IOException {
         while (true) {
             System.out.println("Please enter phone");
             String phone = reader.readLine();
             if (GymStorage.findByPhone(phone) == null) {
-                if (phone.matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$")){
+                if (phone.matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$")) {
                     client.setPhone(phone);
                     break;
-                }
-                else {
+                } else {
                     System.out.println("Invalid phone");
                 }
             } else {
@@ -183,7 +200,6 @@ public class GymInterface {
             System.out.println("Client with such email does not exist");
         }
     }
-
 
     private void findAll() {
         System.out.println("Find all users");

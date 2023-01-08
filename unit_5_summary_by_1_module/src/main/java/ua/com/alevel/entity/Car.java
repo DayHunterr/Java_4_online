@@ -3,7 +3,7 @@ package ua.com.alevel.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Car extends  BaseEntity {
+public class Car extends BaseEntity {
 
     private String carBrand;
     private String carOwnerName;
@@ -15,20 +15,15 @@ public class Car extends  BaseEntity {
     }
 
     public void setCarBrand(String carBrand) {
-            this.carBrand = carBrand;
-
+        this.carBrand = carBrand;
     }
-
 
     public String getCarOwnerName() {
         return carOwnerName;
     }
 
     public void setCarOwnerName(String carOwnerName) {
-
-            this.carOwnerName = carOwnerName;
-
-
+        this.carOwnerName = carOwnerName;
     }
 
     public String getCarSerialNumber() {
@@ -36,8 +31,7 @@ public class Car extends  BaseEntity {
     }
 
     public void setCarSerialNumber(String carSerialNumber) {
-            this.carSerialNumber = carSerialNumber;
-
+        this.carSerialNumber = carSerialNumber;
     }
 
     public Set<String> getGarageIdList() {

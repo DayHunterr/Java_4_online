@@ -17,7 +17,7 @@ public class Garage extends BaseEntity {
         this.address = address;
     }
 
-    public  Set<String> getCarIdList() {
+    public Set<String> getCarIdList() {
             return carIdSet;
     }
 

@@ -2,6 +2,7 @@ package ua.com.alevel;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class GymStorage {
 
     private static List<Client> clients = new ArrayList<>();
@@ -12,13 +13,9 @@ public class GymStorage {
 
     public static void addClient(Client client) {clients.add(client);}
 
-
     public static boolean deleteClient(String email) {
        return clients.removeIf(client -> client.getEmail().equals(email));
-
     }
-
-//G
 
     public static Client findByEmail(String email) {
         return clients.
