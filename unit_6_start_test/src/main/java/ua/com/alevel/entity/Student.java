@@ -1,8 +1,6 @@
-package ua.com.alevel;
+package ua.com.alevel.entity;
 
-import java.lang.*;
-
-public class Student {
+public class Student extends BaseEntity {
 
     private String name;
     private String email;
@@ -14,11 +12,7 @@ public class Student {
     }
 
     public void setName(String name) {
-        if (name.matches(".*\\d.*")) {
-            System.out.println("Ти дурень");
-        } else {
-            this.name = name;
-        }
+        this.name = name;
     }
 
     public String getEmail() {
@@ -48,7 +42,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
+                "id='" + getId() + '\'' +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", gitHubAcc='" + gitHubAcc + '\'' +
                 ", telegramAcc='" + telegramAcc + '\'' +

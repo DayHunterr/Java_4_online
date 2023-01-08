@@ -16,7 +16,7 @@
     </properties>
 
     <build>
-        <finalName>about_oop</finalName>
+        <finalName>hw_4_about_oop</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

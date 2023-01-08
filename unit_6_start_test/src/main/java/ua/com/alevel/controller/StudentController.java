@@ -1,11 +1,16 @@
-package ua.com.alevel;
+package ua.com.alevel.controller;
+
+import ua.com.alevel.entity.Student;
+import ua.com.alevel.service.StudentService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class StudentInterface {
+public class StudentController {
+
+    private StudentService service = new StudentService();
 
     public void start() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -19,10 +24,10 @@ public class StudentInterface {
 
     private void menu() {
         System.out.println();
-        System.out.println("If you want create user, please enter 1");
-        System.out.println("If you want find user, please enter 2");
-        System.out.println("If you want delete user, please enter 3");
-        System.out.println("If you want find all users, please enter 4");
+        System.out.println("If you want create Student, please enter 1");
+        System.out.println("If you want find Student, please enter 2");
+        System.out.println("If you want delete Student, please enter 3");
+        System.out.println("If you want find all Students, please enter 4");
         System.out.println("If you want close application, please enter 5");
         System.out.println();
     }
@@ -39,7 +44,7 @@ public class StudentInterface {
     }
 
     private void create(BufferedReader reader) throws IOException {
-        System.out.println("Create user");
+        System.out.println("Create Student");
         System.out.println("Please enter name");
         String name = reader.readLine();
         System.out.println("Please enter email");
@@ -53,25 +58,25 @@ public class StudentInterface {
         student.setEmail(email);
         student.setTelegramAcc(telegram);
         student.setGitHubAcc(gitHub);
-        StudentStorage.addStudent(student);
+        service.create(student);
     }
 
     private void findByEmail(BufferedReader reader) throws IOException {
-        System.out.println("Find user by email");
-        String email = reader.readLine();
-        Student student = StudentStorage.getStudent(email);
+        System.out.println("Find Student by id");
+        String id = reader.readLine();
+        Student student = service.findById(id);
         System.out.println("student = " + student);
     }
 
     private void deleteByEmail(BufferedReader reader) throws IOException {
-        System.out.println("Delete user by email");
-        String email = reader.readLine();
-        StudentStorage.deleteStudent(email);
+        System.out.println("Delete Student by id");
+        String id = reader.readLine();
+        service.delete(id);
     }
 
     private void findAll() {
-        System.out.println("Find all users");
-        List<Student> students = StudentStorage.getStudents();
+        System.out.println("Find all Students");
+        List<Student> students = service.findAll();
         System.out.println("students = " + students);
     }
 
