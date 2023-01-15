@@ -2,51 +2,60 @@ package ua.com.alevel;
 
 import java.util.Objects;
 
-public class Student implements Comparable<Student> {
-
+public class Student implements Comparable<Student>
+{
     private String firstName;
     private String lastName;
     private Integer age;
 
     public Student() {}
 
-    public Student(String firstName, String lastName) {
+    public Student(String firstName, String lastName)
+    {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Student(String firstName, String lastName, Integer age) {
+    public Student(String firstName, String lastName, Integer age)
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
 
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
+    public Integer getAge()
+    {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Integer age)
+    {
         this.age = age;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (!(o instanceof Student student)) return false;
 
@@ -56,7 +65,8 @@ public class Student implements Comparable<Student> {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int result = firstName != null ? firstName.hashCode() : 0;
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (age != null ? age.hashCode() : 0);
@@ -64,7 +74,8 @@ public class Student implements Comparable<Student> {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
