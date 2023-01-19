@@ -38,6 +38,22 @@ public class Converter {
                 .map(StudentDto::new)
                 .toList();
         System.out.println("studentDtoList = " + studentDtoList);
+
+
+//        if (10 > 0) {
+//            System.out.println("10 > 0");
+//            System.out.println("next");
+//        }
+//
+//        if (10 > 0) System.out.println("10 > 0");
+//        System.out.println("next");
+//
+//        if (studentDtoList != null) {
+//
+//        }
+//        if (null != studentDtoList) {
+//
+//        }
     }
 
     private List<StudentEntity> generateStudentEntities() {
