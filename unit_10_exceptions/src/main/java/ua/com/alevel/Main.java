@@ -4,10 +4,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+
+//        Runtime runtime = Runtime.getRuntime();
+//        runtime.freeMemory();
+//        System.out.println("runtime = " + runtime.totalMemory());
+//        System.out.println("runtime = " + runtime.freeMemory());
 //        Throwable throwable;
 //
 //        Error error; // unchecked
@@ -17,30 +24,45 @@ public class Main {
 //        SQLException sqlException;
 //        RuntimeException runtimeException;
 //        test(10, 0);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            String a = bufferedReader.readLine();
-            String b = bufferedReader.readLine();
-//            System.exit(0);
-            int left = Integer.parseInt(a);
-            int right = Integer.parseInt(b);
-            int result = div2(left, right);
-            System.out.println("result = " + result);
-        } catch (NumberFormatException e) {
-            throw new RuntimeException("wrong format");
-        } catch (IOException e) {
-            throw new RuntimeException("io problem");
-        } catch (Exception e) {
-            throw new CustomException("CustomException: no operation divider");
-        } finally {
-            System.out.println("finally");
+//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//        try {
+//            String a = bufferedReader.readLine();
+//            String b = bufferedReader.readLine();
+////            System.exit(0);
+//            int left = Integer.parseInt(a);
+//            int right = Integer.parseInt(b);
+//            int result = div2(left, right);
+//            System.out.println("result = " + result);
+//        } catch (NumberFormatException e) {
+//            throw new RuntimeException("wrong format");
+//        } catch (IOException e) {
+//            throw new RuntimeException("io problem");
+//        } catch (Exception e) {
+//            throw new CustomException("CustomException: no operation divider");
+//        } finally {
+//            System.out.println("finally");
 //            bufferedReader.close();
+//        }
+
+//        try {
+//
+//        } finally {
+//
+//        }
+
+        List<ExceptionThreadTest> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new ExceptionThreadTest("thread_" + i));
         }
 
-        try {
-
-        } finally {
-
+        for (ExceptionThreadTest exceptionThreadTest : list) {
+            try {
+                exceptionThreadTest.start();
+                String name = exceptionThreadTest.getName();
+                System.out.println("name = " + name);
+            } catch (RuntimeException re) {
+                System.out.println("re = " + re.getMessage());
+            }
         }
     }
 
