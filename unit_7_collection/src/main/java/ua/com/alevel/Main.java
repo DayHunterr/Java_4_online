@@ -17,6 +17,13 @@ public class Main {
         list.add(5.0);
         list.add(5.0, 8.9, 6.88, -9.345, 3.14);
 
+
+        MatList<Number> matList = new MatList<>();
+        matList.add(1.1);
+        matList.add(2);
+        matList.add(2L);
+
+
 //        GenericStudent<String> student1 = new GenericStudent<>();
 
 //        Student student1 = new Student();

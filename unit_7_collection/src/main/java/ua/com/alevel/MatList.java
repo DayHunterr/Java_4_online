@@ -4,8 +4,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class MatList<E extends Number> implements List<E> {
+public final class MatList<E extends Number> implements List<E> {
+
+    private static final int SIZE = 10;
+    private Number[] array = new Number[SIZE];
+
+    public MatList() { }
 
     @Override
     public int size() {
@@ -32,13 +39,20 @@ public class MatList<E extends Number> implements List<E> {
         return new Object[0];
     }
 
+    public E[] toArray(int first, int last) {
+        int limit = SIZE - first - last;
+        return (E[]) Stream.of(array).skip(first).limit(limit).toArray();
+//        return (E[]) array;
+    }
+
     @Override
     public <T> T[] toArray(T[] a) {
-        return null;
+        return null; // TODO I do not know
     }
 
     @Override
     public boolean add(E e) {
+        array[0] = e;
         return false;
     }
 
@@ -83,7 +97,7 @@ public class MatList<E extends Number> implements List<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        return (E) array[index];
     }
 
     @Override
