@@ -21,9 +21,9 @@ public class GarageServiceTest {
         garageService = new GarageService();
     }
 
-    private static final String CARS_CSV_FILE = "dicks/cars.csv";
-    private static final String GARAGES_CSV_FILE = "dicks/garages.csv";
-    private static final String TEST_DIR = "dicks/";
+    private static final String CARS_CSV_FILE = "testDir/cars.csv";
+    private static final String GARAGES_CSV_FILE = "testDir/garages.csv";
+    private static final String TEST_DIR = "testDir/";
     private static final int CARS = 10;
     private static final int GARAGES = 5;
     private static final String CARBRAND = "testBrand";

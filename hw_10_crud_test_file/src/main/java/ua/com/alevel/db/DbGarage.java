@@ -31,7 +31,7 @@ public class DbGarage {
         return instance;
     }
 
-    private static void createDir(String path) {
+    private static void createDir(String path)  {
         File file = new File(path);
         if (!file.exists()) {
             file.mkdir();

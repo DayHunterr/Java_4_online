@@ -16,7 +16,7 @@ public class GarageDao1 implements GarageDao {
 
     @Override
     public void addCar(Car car) {
-        dbGarage.addCar(car);
+         dbGarage.addCar(car);
     }
 
     @Override
