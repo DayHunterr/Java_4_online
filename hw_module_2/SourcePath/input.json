@@ -1,0 +1,72 @@
+[
+{
+  "cities": [
+    {
+      "name": "gdansk",
+      "neighbors": [
+        {
+          "to": 2,
+          "cost": 1
+        },
+        {
+          "to": 3,
+          "cost": 4
+        },
+        {
+          "to": 4,
+          "cost": 13
+        }
+      ]
+    },
+    {
+      "name": "bydgoszcz",
+      "neighbors": [
+        {
+          "to": 1,
+          "cost": 1
+        }
+      ]
+    },
+    {
+      "name": "torun",
+      "neighbors": [
+        {
+          "to": 1,
+          "cost": 4
+        },
+        {
+          "to": 4,
+          "cost": 6
+        }
+      ]
+    },
+    {
+      "name": "warszawa",
+      "neighbors": [
+        {
+          "to": 1,
+          "cost": 13
+        },
+        {
+          "to": 3,
+          "cost": 6
+        }
+      ]
+    }
+  ],
+  "paths": [
+    {
+      "start": "gdansk",
+      "end": "warszawa"
+    },
+    {
+      "start": "bydgoszcz",
+      "end": "warszawa"
+    },
+    {
+      "start": "torun",
+      "end": "bydgoszcz"
+    }
+  ]
+}
+]
