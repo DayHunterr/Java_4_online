@@ -17,7 +17,6 @@ public class CarServiceImpl implements CarService {
     private final CarDao carDao = new CarDaoImpl();
     private final GarageDao garageDao = new GarageDaoImpl();
 
-
     @Override
     public void create(Car car) {
         carDao.create(car);

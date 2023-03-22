@@ -8,16 +8,18 @@ import java.util.Set;
 @Entity
 @Table(name = "cars")
 public class Car extends BaseEntity {
+
     @Column(name = "carBrand")
-    private String carBrand;
+    private String carBrand; // я раз 10 говорил, что в базе принять именовать car_brand
+
     @Column(name = "carOwnerName")
+    private String carOwnerName; // я раз 10 говорил, что в базе принять именовать car_owner_name
 
-    private String carOwnerName;
     @Column(name = "carSerialNumber")
+    private String carSerialNumber; // я раз 10 говорил, что в базе принять именовать car_serial_number
 
-    private String carSerialNumber;
     @ManyToMany(mappedBy = "cars", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Set<Garage> garages;
+    private Set<Garage> garages; // то есть ты не позволяешь пользователю получить список гаражей по кару?
 
     public Car() {
         super();

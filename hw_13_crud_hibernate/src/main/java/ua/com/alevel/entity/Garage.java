@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @Entity
 @Table(name = "garage")
 public class Garage extends BaseEntity {
+
     @Column(name = "address")
     private String address;
 
