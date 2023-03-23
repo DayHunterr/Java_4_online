@@ -7,6 +7,24 @@
     <groupId>groupId</groupId>
     <artifactId>java_4_online</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>di_framework</module>
+        <module>hw_2_about_class</module>
+        <module>hw_3_start_oop</module>
+        <module>hw_4_about_oop</module>
+        <module>hw_5_start_test</module>
+        <module>hw_6_mat_list</module>
+        <module>hw_7_dictionary</module>
+        <module>hw_8_stream</module>
+        <module>hw_9_file_helper</module>
+        <module>hw_10_crud_test_file</module>
+        <module>hw_11_calendar</module>
+        <module>hw_module_2</module>
+        <module>hw_summary_by_1_module</module>
+        <module>hw_12_crud_jdbc</module>
+        <module>hw_13_crud_hibernate</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

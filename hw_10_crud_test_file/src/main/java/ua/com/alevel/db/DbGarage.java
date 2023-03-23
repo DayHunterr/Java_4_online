@@ -12,6 +12,10 @@ import ua.com.alevel.entity.Garage;
 public class DbGarage {
     private static final File CARS_CSV_FILE = new File("files/cars.csv");
     private static final File GARAGES_CSV_FILE = new File("files/garages.csv");
+
+   // public void init(String path){
+   //   this.CARS_CSV_FILE = new File(path +"/cars.csv");
+   // }
     private static DbGarage instance;
 
     private DbGarage() {

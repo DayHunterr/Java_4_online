@@ -1,0 +1,16 @@
+ua\com\alevel\dao\Imp\CarDaoImpl.class
+ua\com\alevel\dao\BaseDao.class
+ua\com\alevel\dao\Imp\GarageDaoImpl.class
+ua\com\alevel\services\CarService.class
+ua\com\alevel\Main.class
+ua\com\alevel\services\Impl\CarServiceImpl.class
+ua\com\alevel\dao\CarDao.class
+ua\com\alevel\services\Impl\GarageServiceImpl.class
+ua\com\alevel\entity\Garage.class
+ua\com\alevel\dao\GarageDao.class
+ua\com\alevel\controller\impl\GarageControllerImpl.class
+ua\com\alevel\entity\BaseEntity.class
+ua\com\alevel\config\HibernateConfig.class
+ua\com\alevel\controller\GarageController.class
+ua\com\alevel\entity\Car.class
+ua\com\alevel\services\GarageService.class

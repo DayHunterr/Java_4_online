@@ -7,9 +7,9 @@ import java.util.Collection;
 import java.util.Optional;
 
 public interface CarDao {
-    void create(Car entity);
+    void create(Car car);
     void insertInGarage(Car car, Garage garage);
-    void update(Car entity);
+    void update(Car car);
     void delete(Long id);
     void deleteFromGarage(Long id);
     Optional<Car> findById(Long id);
