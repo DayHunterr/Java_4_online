@@ -3,12 +3,12 @@ package ua.com.alevel.config;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateConfig {
+public final class HibernateConfig {
 
     private final SessionFactory sessionFactory;
     private static HibernateConfig instance;
 
-    public HibernateConfig() {
+    private HibernateConfig() { // singleton епта))) must be private constructor
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
         sessionFactory = configuration.buildSessionFactory();

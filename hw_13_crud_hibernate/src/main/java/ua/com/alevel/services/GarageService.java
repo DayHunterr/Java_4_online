@@ -8,12 +8,8 @@ import java.util.Optional;
 public interface GarageService {
 
     void create(Garage garage);
-
     void update(Garage garage);
-
     void delete(Garage garage);
-
     Optional<Garage> findById(Long id);
-
     Collection<Garage> findAll();
 }

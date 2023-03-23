@@ -1,11 +1,11 @@
 package ua.com.alevel;
+
 import java.util.Random;
 import java.util.StringJoiner;
 
 public class Main {
 
     public static void main(String[] args) {
-
         MatList<Integer> mathList = new MatList<>();
         Random random = new Random();
         for (int i = 0; i < 100; i++) {

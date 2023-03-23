@@ -12,12 +12,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-
 public class GarageControllerImpl implements GarageController {
 
-    private GarageServiceImpl garageService = new GarageServiceImpl();
-
-    private CarServiceImpl carService = new CarServiceImpl();
+    private final GarageServiceImpl garageService = new GarageServiceImpl();
+    private final CarServiceImpl carService = new CarServiceImpl();
 
     @Override
     public void start() {

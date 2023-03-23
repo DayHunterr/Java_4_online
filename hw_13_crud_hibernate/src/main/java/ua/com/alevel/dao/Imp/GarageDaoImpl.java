@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class GarageDaoImpl implements GarageDao {
+
     private final SessionFactory sessionFactory = HibernateConfig.getInstance().getSessionFactory();
 
     @Override
