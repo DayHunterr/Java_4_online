@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>hw_module_3_backend</module>
         <module>di_framework</module>
         <module>hw_2_about_class</module>
         <module>hw_3_start_oop</module>
@@ -24,6 +25,8 @@
         <module>hw_summary_by_1_module</module>
         <module>hw_12_crud_jdbc</module>
         <module>hw_13_crud_hibernate</module>
+        <module>hw_module_3_frontend</module>
+        <module>hw_module_3_backend</module>
     </modules>
 
     <properties>
