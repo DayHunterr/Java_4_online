@@ -16,7 +16,7 @@ public interface ArticleFacade {
     ArticleResponseDTO findById(Long id);
     void like(Long id);
     void dislike(Long id);
-    void uploadFile(MultipartFile file, Integer postId);
+
 //    UserDashboardChartData generatePersonalDashboardChartData();
 
 }

@@ -1,0 +1,17 @@
+
+element.style {
+}
+.table-sm>:not(caption)>*>* {
+    padding: 3rem 2rem;
+}
+
+.table>:not(caption)>*>* {
+    border-bottom-width: 4px;
+}
+
+/*.table-sm {*/
+/*// stylelint-disable-next-line selector-max-universal*/
+/*   > :not(caption) > * > * {*/
+/*       padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;*/
+/*   }*/
+/*}*/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/user_layout}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Searched</title>
+    <link href="/css/search.css" rel="stylesheet">
+</head>
+<body>
+&nbsp;<div layout:fragment="user_content">
+    <div class="card-body">
+        <table class="table table-sm table-hover">
+            <thead>
+            <tr>
+                <th>Result</th>
+                <th>details</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article: ${titleList}">
+                <td th:text="${article.getTitle()}"></td>
+                <td>
+                    <a th:href="@{'/user/article/details/' + ${article.getId()} + '?reaction=false'}" type="button" class="btn btn-primary">details</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

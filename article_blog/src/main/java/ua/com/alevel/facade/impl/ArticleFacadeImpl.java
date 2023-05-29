@@ -120,10 +120,7 @@ public class ArticleFacadeImpl implements ArticleFacade {
         articleService.dislike(id);
     }
 
-    @Override
-    public void uploadFile(MultipartFile file, Integer postId) {
 
-    }
 
 //    @Override
 //    public UserDashboardChartData generatePersonalDashboardChartData() {

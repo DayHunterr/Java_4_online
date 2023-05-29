@@ -1,20 +1,27 @@
 package ua.com.alevel.controller;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 import ua.com.alevel.facade.ArticleFacade;
 import ua.com.alevel.dto.ArticleDTO;
+import ua.com.alevel.persistence.entity.article.Article;
+import ua.com.alevel.service.ArticleService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/user/article")
 public class ArticleController {
 
     private final ArticleFacade articleFacade;
+    private final ArticleService articleService;
 
-    public ArticleController(ArticleFacade articleFacade) {
+    public ArticleController(ArticleFacade articleFacade, ArticleService articleService) {
         this.articleFacade = articleFacade;
+        this.articleService = articleService;
     }
 
     @GetMapping("/all")
@@ -78,21 +85,12 @@ public class ArticleController {
         return "redirect:/user/article/my";
     }
 
-//    @PostMapping("/upload/{id}")
-//    public String uploadFile(@RequestParam("file") MultipartFile file, @PathVariable Integer id, RedirectAttributes attributes) {
-//        System.out.println("id = " + id);
-//        if (file.isEmpty()) {
-//            attributes.addFlashAttribute("message", "Please select a file to upload.");
-//            return "redirect:/user/post/details/" + id + "?reaction=false";
-//        }
-//        articleFacade.uploadFile(file, id);
-//        return "redirect:/personal/post/details/" + id + "?reaction=false";
-//    }
+    @RequestMapping("/search")
+    public String search(Model model, @Param("keyword") String keyword) {
+        List<Article> articleList = articleService.listAll(keyword);
+        model.addAttribute("titleList", articleList);
+        model.addAttribute("keyword", keyword);
 
-//    @PostMapping("/search")
-//    private String searchBooks(@RequestParam String query, RedirectAttributes ra) {
-//        ra.addAttribute(WebRequestUtil.SEARCH_MESSAGE_PARAM, query);
-//        ra.addAttribute("owner", false);
-//        return "redirect:/personal/post/all";
-//    }
+        return "/search";
+    }
 }

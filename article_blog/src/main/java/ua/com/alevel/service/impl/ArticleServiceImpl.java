@@ -19,6 +19,7 @@ import ua.com.alevel.service.ReactionService;
 import ua.com.alevel.util.SecurityUtil;
 import ua.com.alevel.dto.PersistenceRequestDTO;
 
+import java.util.List;
 import java.util.Map;
 
 import static ua.com.alevel.util.WebRequestUtil.SEARCH_MESSAGE_PARAM;
@@ -121,6 +122,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.REPEATABLE_READ, rollbackFor = Exception.class)
     public void dislike(Long id) {
         reactionProcess(id, false);
+    }
+
+    @Override
+    public List<Article> listAll(String keyword) {
+        if (keyword != null) {
+            return articleRepository.search(keyword);
+        }
+        return articleRepository.findAll();
     }
 
     private void validPost(Article article, Long personalId) {

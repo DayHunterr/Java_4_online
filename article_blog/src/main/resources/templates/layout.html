@@ -21,7 +21,7 @@
 
         <div sec:authorize="hasRole('ROLE_ADMIN')">
             <nav class="navbar navbar-dark bg-dark">
-                <a class="nav-item nav-link" th:href="@{/admin/panel}">Dashboard</a>
+                <a class="nav-item nav-link" th:href="@{/admin/panel}">Panel</a>
                 <a class="nav-item nav-link" th:href="@{/user/article/all}">Users</a>
                 <a class="nav-item nav-link" onclick="document.forms['logoutForm'].submit()" style="cursor: pointer !important;">Logout</a>
             </nav>
@@ -29,12 +29,12 @@
 
         <div sec:authorize="hasRole('ROLE_USER')">
             <nav class="navbar navbar-dark bg-dark">
-                <a class="nav-item nav-link" th:href="@{/user/panel}">Dashboard</a>
-                <a class="nav-item nav-link" th:href="@{'/user/article/my' + '?owner=true'}">My Post</a>
-                <a class="nav-item nav-link" th:href="@{'/user/article/all' + '?owner=false'}">All Post</a>
+                <a class="nav-item nav-link" th:href="@{/user/panel}">Panel</a>
+                <a class="nav-item nav-link" th:href="@{'/user/article/my' + '?owner=true'}">My Articles</a>
+                <a class="nav-item nav-link" th:href="@{'/user/article/all' + '?owner=false'}">All Articles</a>
 
-                <form class="d-flex" method="article" th:action="@{/pages/user/article/search}">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="messages" th:name="query">
+                <form class="d-flex" method="article" th:action="@{/user/article/search}">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="messages" th:name="keyword">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
