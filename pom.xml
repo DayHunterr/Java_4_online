@@ -28,6 +28,7 @@
         <module>hw_module_3_frontend</module>
         <module>hw_module_3_backend</module>
         <module>final_project</module>
+        <module>article_blog</module>
     </modules>
 
     <properties>
