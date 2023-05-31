@@ -2,6 +2,7 @@ package ua.com.alevel.persistence.listener;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
+
 import ua.com.alevel.persistence.entity.user.User;
 
 import javax.persistence.PostLoad;

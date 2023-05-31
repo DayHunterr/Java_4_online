@@ -9,5 +9,5 @@ public interface ArticleService extends CrudService<Article> {
     void like(Long id);
     void dislike(Long id);
     List<Article> listAll(String keyword);
-
+    List<Article> lastArticles();
 }

@@ -3,8 +3,6 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/user_layout}">
-
-
 <head>
     <meta charset="UTF-8">
     <title>Searched</title>
@@ -17,14 +15,15 @@
             <thead>
             <tr>
                 <th>Result</th>
-                <th>details</th>
+                <th>Details</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="article: ${titleList}">
                 <td th:text="${article.getTitle()}"></td>
                 <td>
-                    <a th:href="@{'/user/article/details/' + ${article.getId()} + '?reaction=false'}" type="button" class="btn btn-primary">details</a>
+                    <a th:href="@{'/user/article/details/' + ${article.getId()} + '?reaction=false'}" type="button"
+                       class="btn btn-primary">Details</a>
                 </td>
             </tr>
             </tbody>

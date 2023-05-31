@@ -11,6 +11,7 @@ import ua.com.alevel.persistence.entity.user.BaseUser;
 import ua.com.alevel.persistence.repository.user.BaseUserRepository;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 @Service
@@ -27,7 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         BaseUser baseUser = baseUserRepository
                 .findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("baseUser not found"));
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(baseUser.getRole().name()));

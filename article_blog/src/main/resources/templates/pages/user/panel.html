@@ -9,31 +9,40 @@
   <title>Home</title>
 </head>
 <body>
-
 <div layout:fragment="user_content">
-
   <h1>
     Logged user: <span sec:authentication="name"></span>
   </h1>
-
   <div class="row">
     <div class="col-12">
       <div class="card mt-2 mb-2">
         <div class="card-header">
-          Chart
+          Article Charts
         </div>
         <div class="card-body">
-          <canvas id="myChart" width="400" height="200"></canvas>
+          <table class="table table-sm table-hover">
+            <thead>
+            <tr>
+              <th>Titles</th>
+              <th>Comment</th>
+              <th>Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article: ${last3Articles}">
+              <td th:text="${article.getTitle()}"></td>
+              <td th:text="${article.getComment()}"></td>
+              <td>
+                <a th:href="@{'/user/article/details/' + ${article.getId()} + '?reaction=false'}" type="button"
+                   class="btn btn-primary">Details</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<th:block layout:fragment="scripts">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-  <script type="text/javascript" th:src="@{/js/chart.js}"></script>
-</th:block>
-
 </body>
 </html>

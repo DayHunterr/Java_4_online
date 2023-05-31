@@ -54,6 +54,7 @@ public class AuthController extends BaseController {
 
     @GetMapping("/registration")
     public String registration(Model model) {
+        showMessage(model, false);
         if (securityService.isAuthenticated()) {
             return redirectProcess(model);
         }

@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
     public User findByEmail(String email) {
         return (User) userRepository
                 .findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("BaseUser not found"));
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
     @Override
@@ -80,5 +80,18 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     public List<User> findAllByListId(List<Long> ids) {
         return userRepository.findAllById(ids);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Transactional
+    @Override
+    public boolean isEnable(Long id, boolean enable){
+        userRepository.updateUserEnabledById(id,enable);
+        System.out.printf("Vichli");
+        return enable;
     }
 }

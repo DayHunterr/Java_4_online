@@ -15,16 +15,16 @@
         <div class="col-12">
             <div class="card mb-2 mt-2">
                 <div class="card-header">
-                    My Post
+                    All Articles
                 </div>
                 <div class="card-body">
                     <table class="table table-sm table-hover">
                         <thead>
                         <tr>
-                            <th>title</th>
-                            <th>created</th>
-                            <th>comment</th>
-                            <th>details</th>
+                            <th>Title</th>
+                            <th>Created</th>
+                            <th>Comment</th>
+                            <th>Details</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,7 +33,8 @@
                             <td th:text="${#calendars.format(article.getCreated(),'dd MMMM yyyy')}"></td>
                             <td th:text="${article.getComment()}"></td>
                             <td>
-                                <a th:href="@{'/user/article/details/' + ${article.getId()} + '?reaction=true'}" type="button" class="btn btn-primary">details</a>
+                                <a th:href="@{'/user/article/details/' + ${article.getId()} + '?reaction=true'}"
+                                   type="button" class="btn btn-primary">Details</a>
                             </td>
                         </tr>
                         </tbody>
@@ -42,8 +43,6 @@
             </div>
         </div>
     </div>
-
 </div>
-
 </body>
 </html>

@@ -9,4 +9,6 @@ public interface UserService extends BaseUserService<User> {
     boolean existsByEmail(String email);
     User findByEmail(String email);
     List<User> findAllByListId(List<Long> ids);
+    List<User> findAll();
+    boolean isEnable(Long id, boolean enable);
 }

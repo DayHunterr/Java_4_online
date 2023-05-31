@@ -1,21 +1,22 @@
 package ua.com.alevel.controller;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import ua.com.alevel.facade.ArticleFacade;
-import ua.com.alevel.dto.UserDashboardChartData;
+import ua.com.alevel.persistence.entity.article.Article;
+import ua.com.alevel.service.ArticleService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-    private final ArticleFacade articleFacade;
+    private final ArticleService articleService;
 
-    public UserController(ArticleFacade articleFacade) {
-        this.articleFacade = articleFacade;
+    public UserController(ArticleService articleService) {
+        this.articleService = articleService;
     }
 
     @GetMapping
@@ -24,12 +25,9 @@ public class UserController {
     }
 
     @GetMapping("/panel")
-    public String panel() {
+    public String panel(Model model) {
+        List<Article> articles = articleService.lastArticles();
+        model.addAttribute("last3Articles", articles);
         return "pages/user/panel";
     }
-
-//    @GetMapping("/panel/chart")
-//    public @ResponseBody ResponseEntity<UserDashboardChartData> generateChart() {
-//        return ResponseEntity.ok(articleFacade.generatePersonalDashboardChartData());
-//    }
 }

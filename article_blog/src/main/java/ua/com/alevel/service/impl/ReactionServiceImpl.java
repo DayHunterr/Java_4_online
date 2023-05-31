@@ -13,12 +13,11 @@ import ua.com.alevel.persistence.repository.article.ArticleRepository;
 import ua.com.alevel.persistence.repository.article.ReactionRepository;
 import ua.com.alevel.persistence.repository.user.UserRepository;
 import ua.com.alevel.service.ReactionService;
-import ua.com.alevel.util.ArticleUtil;
 import ua.com.alevel.util.SecurityUtil;
-import ua.com.alevel.dto.KeyValueDTO;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 
 @Service
 public class ReactionServiceImpl implements ReactionService {
@@ -81,20 +80,7 @@ public class ReactionServiceImpl implements ReactionService {
         return reactionRepository.findAllByArticleAndLikeFalse(article);
     }
 
-//    @Override
-//    @PreAuthorize("hasRole('USER')")
-//    @Transactional(readOnly = true)
-//    public Map<String, List<KeyValueDTO<Date, Long>>> generateChartByArticleReaction() {
-//        List<Long> articleIds = generateAllPostIdListByPersonal();
-//        if (CollectionUtils.isEmpty(articleIds)) {
-//            return Collections.emptyMap();
-//        }
-//        Map<String, List<KeyValueDTO<Date, Long>>> chartDataMap = new HashMap<>();
-//        chartDataMap.put(ArticleUtil.POST_ALL, reactionRepository.generateAllArticleWithoutReaction(articleIds));
-//        chartDataMap.put(ArticleUtil.LIKE_ALL, reactionRepository.generateAllArticleByReaction(articleIds, true));
-//        chartDataMap.put(ArticleUtil.DISLIKE_ALL, reactionRepository.generateAllArticleByReaction(articleIds, false));
-//        return chartDataMap;
-//    }
+
 
     private void reactionProcess(Article article, User user, boolean status) {
         Reaction reaction = reactionRepository.findByArticleAndUser(article, user);
@@ -105,14 +91,5 @@ public class ReactionServiceImpl implements ReactionService {
         }
         reaction.setLike(status);
         reactionRepository.save(reaction);
-    }
-
-    private List<Long> generateAllPostIdListByPersonal() {
-        User user = (User) userRepository.findByEmail(SecurityUtil.getUsername()).orElseThrow(() -> new RuntimeException("User not found"));
-        List<Article> articles = articleRepository.findAllByUser(user);
-        if (CollectionUtils.isEmpty(articles)) {
-            return Collections.emptyList();
-        }
-        return articles.stream().map(Article::getId).collect(Collectors.toList());
     }
 }

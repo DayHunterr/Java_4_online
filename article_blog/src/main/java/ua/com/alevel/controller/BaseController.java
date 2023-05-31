@@ -23,15 +23,6 @@ public abstract class BaseController {
         redirectAttributes.addFlashAttribute("errorMessage", error);
     }
 
-    protected void showWarn(Model model, String message) {
-        model.addAttribute("warnMessage", message);
-        showMessage(model, true);
-    }
-
-    protected void showWarn(RedirectAttributes redirectAttributes, String message) {
-        redirectAttributes.addFlashAttribute("warnMessage", message);
-    }
-
     protected void showMessage(Model model, boolean show) {
         model.addAttribute("showMessage", show);
     }

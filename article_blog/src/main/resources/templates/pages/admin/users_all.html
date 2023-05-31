@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/admin_layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+<div layout:fragment="admin_content">
+    <div class="card-body">
+        <table class="table table-sm table-hover">
+            <thead>
+            <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Enable</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="users: ${userList}">
+                <td th:text="${users.getId()}"></td>
+                <td th:text="${users.getEmail()}"></td>
+                <td th:text="${users.getPassword()}"></td>
+                <td th:text="${users.getEnabled()}"></td>
+                <td>
+                    <a th:if="${users.getEnabled()}" th:href="@{'/admin/block/' + ${users.getId()}}" type="button"
+                       class="btn btn-danger">Ban</a>
+                    <a th:if="${!users.getEnabled()}" th:href="@{'/admin/unblock/' + ${users.getId()}}" type="button"
+                       class="btn btn-success">Unban</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

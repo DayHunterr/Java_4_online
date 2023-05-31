@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 
 import ua.com.alevel.persistence.entity.user.Admin;
 import ua.com.alevel.persistence.entity.user.BaseUser;
@@ -16,17 +14,15 @@ import ua.com.alevel.persistence.entity.user.User;
 import ua.com.alevel.persistence.repository.user.AdminRepository;
 import ua.com.alevel.persistence.repository.user.UserRepository;
 
-
 import java.io.IOException;
 import java.util.Optional;
 
-@EnableScheduling
+
 @SpringBootApplication
 public class ArticleBlog {
 
-    @Value("${initPersonals}")
-    private boolean initPersonals;
-
+    @Value("${initUsers}")
+    private boolean initUsers;
     private final AdminRepository adminRepository;
     private final UserRepository personalRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -56,7 +52,7 @@ public class ArticleBlog {
             admin.setPassword(bCryptPasswordEncoder.encode(password));
             adminRepository.save(admin);
         }
-        if (initPersonals) {
+        if (initUsers) {
             System.out.println("start init");
             for (int i = 0; i < 10; i++) {
                 User user = new User();

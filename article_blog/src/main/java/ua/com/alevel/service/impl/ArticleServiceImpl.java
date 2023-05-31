@@ -84,7 +84,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Transactional(readOnly = true)
     public Article findById(Long id) {
         Article article = articleRepository.findById(id).orElseThrow(() -> new RuntimeException("Article not found"));
-        existPost(article);
+        existArticle(article);
         return article;
     }
 
@@ -132,8 +132,14 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepository.findAll();
     }
 
+    @Override
+    public List<Article> lastArticles() {
+        System.out.print(articleRepository.findTop3ByOrderByCreatedDesc());
+            return articleRepository.findTop3ByOrderByCreatedDesc();
+    }
+
     private void validPost(Article article, Long personalId) {
-        existPost(article);
+        existArticle(article);
         if (!article.getUser().getId().equals(personalId)) {
             throw new RuntimeException("you are not a owner");
         }
@@ -142,7 +148,7 @@ public class ArticleServiceImpl implements ArticleService {
         }
     }
 
-    private void existPost(Article article) {
+    private void existArticle(Article article) {
         if (article == null) {
             throw new RuntimeException("article not found");
         }
@@ -162,7 +168,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     private void hasReactionToPost(Article article, Long personalId) {
-        existPost(article);
+        existArticle(article);
         if (article.getUser().getId().equals(personalId)) {
             throw new RuntimeException("you do not have a reaction to this article");
         }
