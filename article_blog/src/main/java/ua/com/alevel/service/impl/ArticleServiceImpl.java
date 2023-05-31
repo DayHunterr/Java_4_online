@@ -134,7 +134,6 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<Article> lastArticles() {
-        System.out.print(articleRepository.findTop3ByOrderByCreatedDesc());
             return articleRepository.findTop3ByOrderByCreatedDesc();
     }
 

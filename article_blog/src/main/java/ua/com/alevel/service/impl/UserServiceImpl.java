@@ -91,7 +91,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean isEnable(Long id, boolean enable){
         userRepository.updateUserEnabledById(id,enable);
-        System.out.printf("Vichli");
         return enable;
     }
 }
